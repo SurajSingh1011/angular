@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent {
   count = 0;
   username = '';
 
+  constructor(private router: Router){}
+
   increment() {
     this.count++;
   }
@@ -19,7 +22,7 @@ export class AppComponent {
     this.count--;
   }
   handleLogin(){
-    console.log(this.username)
-   LoginComponent
+    this.router.navigateByUrl("/login")
+    console.log(this.username+"bsnb");
   }
 }
