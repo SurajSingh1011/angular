@@ -21,5 +21,6 @@
 <p>Hello, {{ username }}</p>
 
 <hr>
-<button (click)=handleLogin()>Login</button>
-<router-outlet></router-outlet>
+<button [disabled]="!username || username.trim().length === 0" (click)="handleLogin()">Login</button>
+<!-- <router-outlet></router-outlet> -->
+ <app-login *ngIf="showLogin"></app-login>

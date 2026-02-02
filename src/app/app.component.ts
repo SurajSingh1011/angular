@@ -9,8 +9,10 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'my-app';
+  isDisabled = true;
   count = 0;
   username = '';
+  showLogin = false;
 
   constructor(private router: Router){}
 
@@ -22,7 +24,8 @@ export class AppComponent {
     this.count--;
   }
   handleLogin(){
-    this.router.navigateByUrl("/login")
+    // this.router.navigateByUrl("/login")
+    this.showLogin = true;
     console.log(this.username+"bsnb");
   }
 }
