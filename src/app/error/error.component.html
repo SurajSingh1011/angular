@@ -1,1 +1,4 @@
-<h3>{{errorMessage}}</h3>
+<div class="error-box" *ngIf="errorMessage">
+  <span class="error-icon">⚠️</span>
+  <span class="error-text">{{ errorMessage }}</span>
+</div>
