@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ListTodosComponent } from './list-todos/list-todos.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     ParentComponent,
     ChildComponent,
+    ErrorComponent,
+    WelcomeComponent,
+    ListTodosComponent,
   ],
   imports: [
     BrowserModule,

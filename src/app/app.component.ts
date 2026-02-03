@@ -8,24 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
-  isDisabled = true;
-  count = 0;
-  username = '';
-  showLogin = false;
-
+  title = 'my-app';  
   constructor(private router: Router){}
-
-  increment() {
-    this.count++;
-  }
-
-  decrement() {
-    this.count--;
-  }
-  handleLogin(){
-    // this.router.navigateByUrl("/login")
-    this.showLogin = true;
-    console.log(this.username+"bsnb");
-  }
 }

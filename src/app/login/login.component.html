@@ -1,2 +1,13 @@
 <!-- <title>Login</title> -->
-<p>Congratulations! logged in!!!</p>
+
+
+<h2>Input Display</h2>
+<input [(ngModel)]="username" placeholder="Enter name"><br/><br/>
+<input [(ngModel)]="password" placeholder="Enter password">
+<p>Hello, {{ username }}</p>
+
+<hr>
+<button [disabled]="!username || username.trim().length === 0" (click)="handleLogin()">Login</button>
+ <div>
+ <h4 *ngIf="!isValidCred && isSubmitted">{{errorMessage}}</h4>
+ </div> 
