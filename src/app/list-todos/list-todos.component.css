@@ -1,10 +1,87 @@
-.active-todo {
-  color: green;
-  font-weight: bold;
+/* Page container */
+.todo-container {
+  width: 80%;
+  margin: 40px auto;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.inactive-todo {
-  color: red;
-  font-weight: bold;
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
+/* Table styling */
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.todo-table thead {
+  background: #2f80ed;
+  color: white;
+}
+
+.todo-table th,
+.todo-table td {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+/* Row hover */
+.todo-table tbody tr {
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.todo-table tbody tr:hover {
+  background: #f9fafc;
+  transform: scale(1.01);
+}
+
+/* Completed todo */
+.todo-done {
+  background: #e8f8f0;
+}
+
+/* Pending todo */
+.todo-pending {
+  background: #fff6e5;
+}
+
+/* ID column */
+.id {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Date column */
+.date {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Status badge */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Badge colors */
+.status-badge.done {
+  background: #27ae60;
+  color: white;
+}
+
+.status-badge.pending {
+  background: #f2994a;
+  color: white;
+}

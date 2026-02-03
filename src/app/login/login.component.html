@@ -1,13 +1,40 @@
-<!-- <title>Login</title> -->
+<div class="login-container">
+  <div class="login-card">
 
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Please login to continue</p>
 
-<h2>Input Display</h2>
-<input [(ngModel)]="username" placeholder="Enter name"><br/><br/>
-<input [(ngModel)]="password" placeholder="Enter password">
-<p>Hello, {{ username }}</p>
+    <div class="form-group">
+      <input
+        type="text"
+        [(ngModel)]="username"
+        name="username"
+        placeholder="Username">
+    </div>
 
-<hr>
-<button [disabled]="!username || username.trim().length === 0" (click)="handleLogin()">Login</button>
- <div>
- <h4 *ngIf="!isValidCred && isSubmitted">{{errorMessage}}</h4>
- </div> 
+    <div class="form-group">
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Password">
+    </div>
+
+    <button
+      class="login-btn"
+      [disabled]="!username || username.trim().length === 0"
+      (click)="handleLogin()">
+      Login
+    </button>
+
+    <p class="greeting" *ngIf="username">
+      Hello, {{ username }}
+    </p>
+
+    <div class="error"
+         *ngIf="!isValidCred && isSubmitted">
+      {{ errorMessage }}
+    </div>
+
+  </div>
+</div>

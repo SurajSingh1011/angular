@@ -1,20 +1,29 @@
-<html>
-<div style="text-align: center;">
-    <h2>
-        Congratulations! logged in!!!
-    </h2>
-    <h1>Welcome {{name}} to Application</h1>
-</div>
+<div class="page-container">
 
-</html>
-<!-- <router-outlet></router-outlet> -->
+  <!-- Welcome Section -->
+  <div class="welcome-card">
+    <h2>🎉 Login Successful</h2>
+    <h1>Welcome <span>{{ name }}</span></h1>
+    <p class="subtitle">You are now logged in to the application</p>
+  </div>
 
-<h2>Counter App</h2>
+  <!-- Counter Section -->
+  <div class="counter-card">
+    <h3>Counter App</h3>
 
-<button (click)="decrement()">-</button>
-<span> {{ count }} </span>
-<button (click)="increment()">+</button>
+    <div class="counter-controls">
+      <button class="counter-btn" (click)="decrement()">−</button>
+      <span class="count">{{ count }}</span>
+      <button class="counter-btn" (click)="increment()">+</button>
+    </div>
+  </div>
 
-<div>
-    <h4>To manage your Todo, click <a routerLink="/todos">here</a></h4>
+  <!-- Todo Navigation -->
+  <div class="todo-card">
+    <h4>Manage your tasks efficiently</h4>
+    <a routerLink="/todos" class="todo-link">
+      Go to My Todos →
+    </a>
+  </div>
+
 </div>

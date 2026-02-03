@@ -1,20 +1,38 @@
-<table border="1">
-    <Caption>My Todo's</Caption>
+<div class="todo-container">
+  <h2 class="title">My Todos</h2>
+
+  <table class="todo-table">
     <thead>
-        <tr>
-            <th>id</th>
-            <th>description</th>
-            <th>Target Date</th>
-            <th>is Completed?</th>
-        </tr>
+      <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Target Date</th>
+        <th>Status</th>
+      </tr>
     </thead>
+
     <tbody>
-        <tr *ngFor="let todo of todos" [ngClass]="{ 'active-todo': todo.done,'inactive-todo':!todo.done }">
-            <td>{{todo.id}}</td>
-            <td>{{todo.description}}</td>
-            <td [ngStyle]="{'background-color' : 'yellow'}">
-            {{todo.targetDate | date}}</td>
-            <td>{{todo.done}}</td>
-        </tr>
+      <tr *ngFor="let todo of todos"
+          [ngClass]="todo.done ? 'todo-done' : 'todo-pending'">
+
+        <td class="id">{{ todo.id }}</td>
+
+        <td class="description">
+          {{ todo.description }}
+        </td>
+
+        <td class="date">
+          {{ todo.targetDate | date:'mediumDate' }}
+        </td>
+
+        <td>
+          <span class="status-badge"
+                [ngClass]="todo.done ? 'done' : 'pending'">
+            {{ todo.done ? 'Completed' : 'Pending' }}
+          </span>
+        </td>
+
+      </tr>
     </tbody>
-</table>
+  </table>
+</div>
