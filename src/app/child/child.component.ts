@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
-  message = 'Hello from Child Component';
+ // Parent → Child
+  @Input() product: any;
+
+  // Child → Parent (optional extension)
+  @Output() back = new EventEmitter<void>();
+
+  goBack() {
+    this.back.emit();
+  }
 }

@@ -1,2 +1,22 @@
-<!-- Interpolation -->
-<p>{{message}}</p>
+<div class="detail-card">
+
+  <h3>Product Details</h3>
+
+  <div class="detail-row">
+    <span class="label">ID</span>
+    <span>{{ product.id }}</span>
+  </div>
+
+  <div class="detail-row">
+    <span class="label">Name</span>
+    <span>{{ product.name }}</span>
+  </div>
+
+  <div class="detail-row">
+    <span class="label">Price</span>
+    <span>₹{{ product.price }}</span>
+  </div>
+
+  <button class="back-btn" (click)="goBack()">← Back to list</button>
+
+</div>

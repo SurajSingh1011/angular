@@ -1,4 +1,29 @@
-<p>
-    Parent Component
-</p>
-<app-child></app-child>
+<div class="page-container">
+
+  <h2 class="page-title">Products</h2>
+
+  <div class="layout">
+
+    <!-- Product List -->
+    <div class="product-list">
+      <div class="product-card"
+           *ngFor="let product of products"
+           (click)="onProductSelect(product)"
+           [class.selected]="product === selectedProduct">
+
+        <div class="product-name">{{ product.name }}</div>
+        <div class="product-price">₹{{ product.price }}</div>
+
+      </div>
+    </div>
+
+    <!-- Product Detail -->
+    <app-child
+      *ngIf="selectedProduct"
+      [product]="selectedProduct"
+      (back)="selectedProduct = null">
+    </app-child>
+
+  </div>
+
+</div>
